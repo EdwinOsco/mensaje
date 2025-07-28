@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>💀 Sistema Hackeado</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: monospace;
+      font-size: 18px;
+      overflow: hidden;
+    }
+    .mensaje {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .parpadeo {
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mensaje">
+    <h1>⚠️ SISTEMA COMPROMETIDO ⚠️</h1>
+    <p class="parpadeo">Iniciando protocolo de purga de datos...</p>
+    <p>Localizando ubicación: <span id="ubicacion">[Desconocida]</span></p>
+    <p>Virus: 🌐 XenoCrypt v9.3 activo</p>
+    <p>Hack por: <strong>Anonymous.exe</strong></p>
+    <p style="margin-top:20px;">Tu Celular será reiniciada en <span id="countdown">10</span> segundos...</p>
+  </div>
+
+  <script>
+    let segundos = 10;
+    const cuenta = document.getElementById("countdown");
+    const intervalo = setInterval(() => {
+      segundos--;
+      cuenta.textContent = segundos;
+      if (segundos === 0) {
+        clearInterval(intervalo);
+        document.body.innerHTML = "<h1 style='color:red; text-align:center; margin-top:20%;'>💥 Boom... Broma! 😄</h1>";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
